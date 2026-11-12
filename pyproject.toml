@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ech-matcher"
+version = "0.1.0"
+description = "A fast quantum circuit optimizer using the template-matching technique. It is designed based on the eigen-cluster hypergraph (ECH), a commutativity-aware representation that collapses gates sharing the same eigen-directions into a single super-node while retaining all local connectivity."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+authors = [
+    { name = "Xin Hong" },
+    { name = "Jintao Yu" },
+]
+dependencies = [
+    "networkx>=3.5",
+    "numpy>=2.5.4",
+    "qiskit>=2.6.2",
+    "sympy>=1.14",
+]
+
+[project.optional-dependencies]
+artifact = [
+    "matplotlib>=3.10.6",
+]
+dev = [
+    "pytest>=8.4.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
